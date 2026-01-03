@@ -1,55 +1,66 @@
 # Machine Learning Analyses – Wire Solutions
 
-Deze repository bevat het volledige Jupyter Notebook, de dataset en ondersteunende code die zijn gebruikt voor de machine-learninganalyses binnen het data-onderzoek voor Wire Solutions.  
-Het notebook combineert zowel **supervised learning (tekstclassificatie)** als **unsupervised learning (topic modelling)** in één geïntegreerd bestand.
+Deze repository bevat het Jupyter Notebook dat is gebruikt voor de
+machine-learninganalyses binnen het dataonderzoek voor Wire Solutions.
+De analyses zijn uitgevoerd ter ondersteuning van het onderzoeksrapport
+en dienen als inhoudelijke verdieping van de servicedeskanalyse.
+
+Het notebook combineert zowel supervised als unsupervised machine
+learning op basis van incidentbeschrijvingen.
 
 ## Doel van de analyses
 
-Het doel van dit onderzoek is om te beoordelen in hoeverre machine learning waarde kan toevoegen binnen de servicedeskprocessen van Wire Solutions. De analyses richten zich op twee vragen:
+Het doel van de machine-learninganalyses is om te verkennen in hoeverre
+tekstuele incidentdata aanvullende inzichten kan bieden bij de analyse
+van servicedeskprocessen.
 
-1. **Supervised learning:**  
-   Kunnen incidenten met een ontbrekende afdelingsregistratie automatisch worden aangevuld op basis van de incidentbeschrijving?
+De analyses richten zich op twee vragen:
 
-2. **Unsupervised learning:**  
-   Welke thema’s ontstaan vanzelf binnen de incidentbeschrijvingen, en sluiten deze aan op de bestaande categorisatie?
+1. **Supervised learning**  
+   In hoeverre is het mogelijk om incidenten met ontbrekende
+   afdelingsinformatie automatisch te classificeren op basis van
+   hun tekstbeschrijving?
 
-De resultaten helpen om:
-- de geschiktheid van tekstclassificatie binnen servicedeskdata te beoordelen,  
-- te begrijpen welke inhoudelijke probleemgroepen (topics) in de incidentbeschrijvingen voorkomen,  
-- inzicht te krijgen in de beperkingen en mogelijkheden van ML binnen operationele IT-processen.
+2. **Unsupervised learning**  
+   Welke inhoudelijke thema’s komen vanzelf naar voren in de
+   incidentbeschrijvingen, en hoe verhouden deze zich tot de bestaande
+   incidentcategorieën?
+
+De resultaten worden gebruikt om verschillen in complexiteit tussen
+incidentcategorieën beter te begrijpen en dienen niet als zelfstandig
+beslissingsmodel.
 
 ---
 
-## Inhoud van de notebook
+## Inhoud van het notebook
 
 Het notebook bevat onder andere:
 
-### 🔷 Supervised Learning (Tekstclassificatie)
-- Inladen en opschonen van tekstdata  
-- TF-IDF vectorisatie  
-- Train-test-splitsing (80/20)  
-- Logistic Regression-model voor afdelingsvoorspelling  
-- Evaluatie met accuracy, precision, recall en F1-score  
-- Confusion matrix en interpretatie  
-- Drempelanalyse (thresholding) voor modelzekerheid  
-- Toepassing op incidenten met onbekende afdelingscode  
+### Supervised learning (tekstclassificatie)
+- Voorbewerking en opschoning van tekstdata  
+- Omzetting van tekst naar numerieke kenmerken (TF-IDF)  
+- Training van een classificatiemodel  
+- Evaluatie van de resultaten op hoofdlijnen  
+- Verkennende toepassing op incidenten met ontbrekende categorie  
 
-### 🔷 Unsupervised Learning (Topic Modelling)
-- Tekstopschoning + stopwoordenlijst  
-- Tokenisatie en document-term matrix (CountVectorizer)  
-- LDA-model met 4 topics  
-- Topwoorden per topic  
-- Dominant topic per incident  
-- Mapping naar interpreteerbare topiclabels  
-- Export voor verdere analyse in Power BI  
-
-Het notebook ondersteunt daarmee zowel de kwantitatieve conclusies uit het hoofdrapport als de thematische inzichten die in de servicedeskanalyse zijn gebruikt.
+### Unsupervised learning (topic modelling)
+- Tekstopschoning en tokenisatie  
+- Topic modelling met LDA  
+- Identificatie van dominante thema’s per incident  
+- Interpretatie van topics op inhoudelijk niveau  
+- Gebruik van de resultaten ter verdieping van de analyse in Power BI  
 
 ---
 
-## Installatie
+## Dataset
 
-Installeer de benodigde pakketten met:
+De gebruikte dataset is niet opgenomen in deze repository in verband met
+vertrouwelijkheid. Het notebook toont de volledige analysemethodiek en
+kan worden uitgevoerd met een vergelijkbare datasetstructuur.
 
-```bash
-pip install pandas numpy scikit-learn matplotlib seaborn jupyter
+---
+
+## Technische omgeving
+
+De analyses zijn uitgevoerd met Python en gangbare data-analysebibliotheken,
+waaronder pandas, scikit-learn, matplotlib en Jupyter Notebook.
